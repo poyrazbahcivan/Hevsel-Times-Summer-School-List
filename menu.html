@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Hevsel Times</title>
+    <link rel="shortcut icon" href="../kirmizilogo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style1.css"> 
+    <script src="../check.js" defer></script>
+    <style>
+        #logoutButton {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            opacity: 1;
+            color: white;
+            background-color: #d32f2f;
+            font-family: 'LibreBaskerville';
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        #logoutButton:hover {
+            background-color: #ab8256;
+        }
+    </style>
+</head>
+<body style="background: url('College2.jpg') no-repeat center center fixed; background-size: cover;">
+    <button id="logoutButton">Log Out</button>
+    
+    <div class="menu-container">
+        <h2>Welcome to SSL</h2>
+        <div class="button-container">
+            <a href="ssl.html" class="menu-button">Summer School List</a>
+            <a href="bookameeting.html" class="menu-button">Book a Meeting</a>
+            <a href="essayreview.html" class="menu-button">Essay Review</a> 
+            <a href="supportingdocuments.html" class="menu-button">Supporting Documents</a>
+            <a href="contact.html" class="menu-button">Contact</a>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const logoutButton = document.getElementById('logoutButton');
+            
+            if (logoutButton) {
+                logoutButton.addEventListener('click', function() {
+                    logout();
+                });
+            }
+        });
+
+        function logout() {
+            localStorage.setItem('authenticated', 'false');
+            window.location.href = '../index.html';
+        }
+    </script>
+</body>
+</html>
